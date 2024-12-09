@@ -13,6 +13,13 @@ const OrderRouter = require('./routes/OrderRouter');
 
 const server = exprees();
 server.use(exprees.json());
+server.use(cors(
+    {
+        origin: ['https://deploy-mern-1whq.vercel.app'],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+))
 
 
 const corsOptions = {
