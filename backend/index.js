@@ -56,9 +56,7 @@ connection()
 // const server = exprees();
 server.use(exprees.json());
 
-// Use the port Render assigns to your application
-const PORT = process.env.PORT || 5000;  // Default to 5000 for local development
-
+const PORT = process.env.PORT || 5002;  // Use 5002 instead of 5002
 server.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
