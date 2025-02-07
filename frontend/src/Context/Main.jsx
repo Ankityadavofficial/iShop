@@ -22,7 +22,7 @@ export default function Main(props) {
     const [orders, setOrders] = useState([])
     const [userlist, setUserList] = useState([])
 
-    const API_BASE_URL = 'http://localhost:5000';
+    const API_BASE_URL = 'https://ishop-backend-sotp.onrender.com';
     const CATEGORY_URL = '/category';
     const COLOR_URL = "/color";
     const PRODUCT_URL = "/product";
