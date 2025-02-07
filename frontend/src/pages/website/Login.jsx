@@ -10,7 +10,7 @@ import { FaEyeSlash } from "react-icons/fa";
 
 const LoginPage = () => {
     const { data: cartData, total: cartTotal } = useSelector(store => store.cart)
-    const { notify } = useContext(Context)
+    const { notify,API_BASE_URL } = useContext(Context)
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('')
