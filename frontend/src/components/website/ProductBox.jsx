@@ -19,7 +19,7 @@ export default function ProductBox({ _id, main_image, name, original_price, fina
 
     const cartToDb = (prod_id, price) => {
         if (user.data != null) {
-            axios.post('http://localhost:5000/user/update-db',
+            axios.post(API_BASE_URL + '/user/update-db',
                 {
                     user_id: user.data._id,
                     prod_id
