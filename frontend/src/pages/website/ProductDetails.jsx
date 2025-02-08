@@ -7,6 +7,7 @@ import { FcPrevious } from "react-icons/fc";
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../reducers/Cart';
+import axios from 'axios';
 
 export default function ProductDetails() {
     const pro_id = useParams()
