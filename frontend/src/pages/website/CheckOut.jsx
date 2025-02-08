@@ -13,7 +13,7 @@ import { MdDelete } from "react-icons/md";
 
 export default function CheckOut() {
     const { error, isLoading, Razorpay } = useRazorpay();
-    const { notify, fetchAddress, address, fetchProduct } = useContext(Context)
+    const { notify, fetchAddress, address, API_BASE_URL, fetchProduct } = useContext(Context)
     const user = useSelector(store => store.user)
     const cart = useSelector(store => store.cart)
     const [addopen, setAddOpen] = useState(false);
@@ -30,7 +30,7 @@ export default function CheckOut() {
             payment_type,
             user_id: user.data._id
         }
-        axios.post('http://localhost:5000/order/place-order', data)
+        axios.post(API_BASE_URL + '/order/place-order', data)
             .then(
                 (success) => {
                     if (success.data.status == 1) {
@@ -63,7 +63,7 @@ export default function CheckOut() {
                 console.log(response);
                 alert("Payment Successful!");
                 axios.post(
-                    "http://localhost:5000/order/payment-success",
+                    API_BASE_URL + "/order/payment-success",
                     {
                         razorpay_response: response,
                         db_order_id: order_id
@@ -96,7 +96,7 @@ export default function CheckOut() {
         razorpayInstance.open();
         razorpayInstance.on("payment.failed", function (response) {
             axios.post(
-                "http://localhost:5000/order/payment-failed",
+                API_BASE_URL + "/order/payment-failed",
                 {
                     razorpay_response: response,
                     db_order_id: order_id
@@ -221,7 +221,7 @@ export default function CheckOut() {
     // }
 
     const deleteAddress = (index) => {
-        axios.delete(`http://localhost:5000/user/delete-address/${index}/${user.data._id}`)
+        axios.delete( API_BASE_URL +  `/user/delete-address/${index}/${user.data._id}`)
             .then(
                 (success) => {
                     if (success.data.status == 1) {
