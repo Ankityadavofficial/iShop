@@ -27,7 +27,7 @@ const LoginPage = () => {
         }
         try {
             axios.post(
-                API_BASE_URL + 'user/login',
+                API_BASE_URL + '/user/login',
                 {
                     email, password
                 }
@@ -42,7 +42,7 @@ const LoginPage = () => {
                             })
                         );
                         navigator('/')
-                        axios.post(API_BASE_URL + 'user/move-to-cart',
+                        axios.post(API_BASE_URL + '/user/move-to-cart',
                             {
                                 cartData,
                                 userId: success.data.user._id
