@@ -194,7 +194,7 @@ export default function CheckOut() {
         e.preventDefault();
         document.body.style.overflow = ''
         // if (onSubmit) onSubmit(formData); // Pass data back to the parent component or API call
-        axios.post(`http://localhost:5000/user/address/${user.data._id}`,
+        axios.post(API_BASE_URL + `/user/address/${user.data._id}`,
             formData
         )
             .then(
