@@ -10,7 +10,7 @@ import { FaEyeSlash } from "react-icons/fa";
 
 export default function Register() {
     const { data: cartData, total: cartTotal } = useSelector(store => store.cart)
-    const { notify } = useContext(Context)
+    const { notify,API_BASE_URL } = useContext(Context)
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setNames] = useState('')
@@ -38,7 +38,7 @@ export default function Register() {
         e.preventDefault();
         try {
             axios.post(
-                'http://localhost:5000/user/register',
+                API_BASE_URL + '/user/register',
                 {
                     email, password, name, contact
                 }
