@@ -80,7 +80,7 @@ export default function MyOrders() {
                                                     <div className='col-span-4 flex gap-10 ' >
                                                         <img src={API_BASE_URL + productImageBaseUrl + "/" + found?.main_image} className='' width='15%' alt="" />
                                                         <div className='text-[15px] pt-5 text-blue-600 hover:text-black cursor-pointer hover:underline' >
-                                                            {found.name}
+                                                            {found?.name}
                                                         </div>
                                                     </div>
                                                     <div className='col-span-2 flex flex-col gap-3 px-10' >
